@@ -3,13 +3,13 @@ It is always a good practice to know the hardware components of your Linux syste
 Check Hardware and System Information in Linux
 To know only system name, you can use uname command without any switch will print system information or uname -s command will print the kernel name of your system.
 
-tecmint@tecmint ~ $ uname
+ $ uname
 
 Linux
 
 To view your network hostname, use ‘-n’ switch with uname command as shown.
 
-tecmint@tecmint ~ $ uname -n
+ $ uname -n
 
 tecmint.com
 
@@ -322,7 +322,7 @@ tecmint@tecmint ~ $ sudo hdparm /dev/sda1
 
 To print information about device geometry interms of cylinders, heads, sectors, size and the starting offset of the device, use the -g option.
 
-tecmint@tecmint ~ $ sudo hdparm -g /dev/sda1
+ $ sudo hdparm -g /dev/sda1
 
 /dev/sda1:
  geometry      = 56065/255/63, sectors = 2048000, start = 2048
@@ -333,7 +333,7 @@ To gather information about file system partitions, you can use fdisk command. A
 
 You can print partition information as follows. Remember to run the command as a superuser or else you may not see any output.
 
-tecmint@tecmint ~ $ sudo fdisk -l
+ $ sudo fdisk -l
 
 WARNING: GPT (GUID Partition Table) detected on '/dev/sda'! The util fdisk doesn't support GPT. Use GNU Parted.
 
@@ -355,7 +355,7 @@ You can also use the dmidecode utility to extract hardware information by readin
 
 To print information about memory, run this command as a superuser.
 
-tecmint@tecmint ~ $ sudo dmidecode -t memory
+ $ sudo dmidecode -t memory
 
 # dmidecode 2.12
 # SMBIOS entry point at 0xaaebef98
@@ -386,7 +386,7 @@ Memory Controller Information
 
 To print information about system, run this command.
 
-tecmint@tecmint ~ $ sudo dmidecode -t system
+ $ sudo dmidecode -t system
 
 # dmidecode 2.12
 # SMBIOS entry point at 0xaaebef98
@@ -406,7 +406,7 @@ System Information
 
 To print information about BIOS, run this command.
 
-tecmint@tecmint ~ $ sudo dmidecode -t bios
+ $ sudo dmidecode -t bios
 
 # dmidecode 2.12
 # SMBIOS entry point at 0xaaebef98
@@ -461,304 +461,10 @@ Processor Information
 	ID: 51 06 04 00 FF FB EB BF
 	Signature: Type 0, Family 6, Model 69, Stepping 1
 	Flags:
-...
-
-Summary
-
-There are many other ways you can use to obtain information about your system hardware components. Most of these commands use files in the /proc directory to extract system information.
-
-Hope you find this tips and tricks useful and remember to post a comment in case you want to add more information to this or if you face any difficulties in using any of the commands. Remember to always stay connected to Tecmint.
-Share
-+
-0
-0
-0
-Ask Anything
-If You Appreciate What We Do Here On TecMint, You Should Consider:
-
-    Stay Connected to: Twitter | Facebook | Google Plus
-    Subscribe to our email updates: Sign Up Now
-    Get your own self-hosted blog with a Free Domain at ($3.45/month).
-    Become a Supporter - Make a contribution via PayPal
-    Support us by purchasing our premium books in PDF format.
-    Support us by taking our online Linux courses
-
-We are thankful for your never ending support.
-
-Tags: Linux Tricks
-
-View all Posts
-
-Aaron Kili
-
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
-
-Your name can also be listed here. Got a tip? Submit it here to become an TecMint author.
-RedHat RHCE and RHCSA Certification Book
-Linux Foundation LFCS and LFCE Certification Preparation Guide
-
-    Next story
-    8 Interesting ‘Vi/Vim’ Editor Tips and Tricks for Every Linux Administrator – Part 2
-    Previous story
-    RHCE Series: Implementing HTTPS through TLS using Network Security Service (NSS) for Apache – Part 8
-
-You may also like...
-
-    Unzip Zip Files to Specific Directory
-    4
-    How to Create and Extract Zip Files to Specific Directory in Linux
-
-    17 Jul, 2017
-    Manage Linux Filenames with Special Characters
-    6
-    How to Manipulate Filenames Having Spaces and Special Characters in Linux
-
-    9 Jun, 2015
-    Find a Directory in Linux
-    6
-    Ways to Use ‘find’ Command to Search Directories More Efficiently
-
-    22 Nov, 2016
-
-36 Responses
-
-    Comments16
-    Pingbacks0
-
-    Manikandaprabu
-    January 30, 2019 at 11:04 pm
-
-    Can i use these commands to check server or other computers remotely??
-    Reply
-        Ravi Saive
-        January 31, 2019 at 11:28 am
-
-        @Manikandaprabu,
-
-        Yes, you can use these all commands on remote Linux server via a SSH.
-        Reply
-    Smita Srivastava
-    July 24, 2018 at 6:29 pm
-
-    How can we get kernel component related information in linux? What are the commands?
-    Reply
-        Aaron Kili
-        July 25, 2018 at 7:52 pm
-
-        @Smita
-
-        Consult this guide: https://www.tecmint.com/find-linux-kernel-version-distribution-name-version-number/
-        Reply
-    Larry Helms
-    June 21, 2018 at 11:38 pm
-
-    You left out networking components
 
     ifconfig -a
     netstat -a
-    Reply
-        Aaron Kili
-        June 22, 2018 at 4:20 pm
-
-        @Larry
-
-        Okay, thanks for mentioning.
-        Reply
-    Moltke
-    March 14, 2017 at 7:00 am
-
-    Where do the html output goes to? I tried the lshw >html but I can’t find it anywhere. By the way, I was curious whether running lshw>txt would work, but it didn’t lol
-    Reply
-        Ravi Saive
-        March 14, 2017 at 10:40 am
-
-        @Moltke,
-
-        The html file created in your current working directory, for example if you run the following command from /home/username, the output of html will be created under /home/username, that you can check with ls command.
 
         # sudo lshw -html > lshw.html
         # ls
-
-        Reply
-            Moltke
-            March 15, 2017 at 6:26 am
-
-            Thank you for your answer. Yes, after posting the question it occurred to me to check the capture again and there it was; /home/username on the search bar, so I went to my home folder and found it.
-
-            Felt a little bit like a fool and wanted to delete the comment but it is not possible to do so :)…thanks again for your answer. And nice article! I’m a big fan of this site, always come to check what’s new and always find some really useful articles like this one.
-
-            By the way, if I were to do some “benchmarks” on Linux systems, what is the best way to do so? Something else than top, htop or the likes.
-
-            I’m running some VMs under virtualbox and I’m curious if it is possible to do and how. I’d like to do that to compare them all cause I’m creating a wiki with all the tests I’ve done so far for personal use and who knows, maybe even upload it onto the web!!
-            Reply
-                Aaron Kili
-                March 15, 2017 at 12:53 pm
-
-                @Moltke
-
-                You can use:
-                1. glances – a top-like monitoring tool with modern features compared to top
-                2. smem – reports memory consumption per-process and per-user basis in Linux
-                3. stress-ng – impose high CPU load and run stress test
-                4. And there are lot’s of other tools you can find here: 20 Command Line Tools to Monitor Linux Performance
-
-                These are obviously not the only tools, but i believe using a collection of various tools/utilities can help you come up with accurate and more reliable results. Thanks.
-                Reply
-                    Moltke
-                    March 15, 2017 at 11:24 pm
-
-                    Thanks for your answer. I’ve used glances and it is quite useful. The other ones haven’t used them yet, but I will.
-
-                    On Linux system where systemd is present, it’s possible to use some command line utilities to gather information about boot time, CPU usage and more, what can I use to do this in those ones where it is not?.
-
-                    Also, the mesa-utils offer the capability to run tests on graphics performance. However, this is a lot of information to process and it is much time consuming, is there such a software/tool which I can use for gathering this information altogether?
-
-                    I think probably not, but if you don’t mind I’d like to post the question, is there any? In the link you provided I see collectl, and it certainly looks like the perfect tool to accomplish what I want, or at least most of it, so I’ll try it and see what’s capable of. Thanks again for taking the time to answer. :)
-    Michael
-    January 24, 2017 at 4:29 pm
-
-    You can also use smartctl to check your drives, hpasmcli/hpacucli for hp servers, and ipmitool sdr list to see information about your sensors, fans, etc.
-    Reply
-    Kerhep Gasue
-    November 3, 2016 at 3:56 pm
-
-    How can i check hardware in other PCs in networks that has Linux on board? I have been using 3rd party GUI computer hardware inventory
-    from Softinventive Lab software but it`s too pricy. Any clues?
-    Reply
-        Aaron Kili
-        November 10, 2016 at 2:18 pm
-
-        @Kerhep
-
-        I suppose you mean checking PC hardware info from a Linux machine, we have not come across any specific tools for that purpose, however, you can use network monitoring tools such as Nagios, Zabbix, Monitorix and many more. Although, they may not offer detailed hardware info from PCs.
-        Reply
-        Mssm
-        December 21, 2016 at 11:13 am
-
-        You could use “ansible” which is great tool mainly used for automation, orchestration, which can also handy for running standalone commands, which can just use native ssh protocol to query end device and pull out complete hardware dump and show it.
-
-        This is again open source, however, there is an enterprise version called “ansible tower” for which u would need license. Ansible is belongs to Red Hat now.
-        Reply
-            Aaron Kili
-            December 27, 2016 at 6:56 pm
-
-            @Mssm
-
-            Thanks for the clear, descriptive and above all useful feedback. I’ll surely try it out and hope every user who has faced the same issue as @Kerhap Gause will as well.
-            Reply
-
-« Older Comments
-Got something to say? Join the discussion.
-
-Comment
-
-Name *
-
-Email *
-
-Website
-
-Save my name, email, and website in this browser for the next time I comment.
-
-Notify me of followup comments via e-mail. You can also subscribe without commenting.
-
-This site uses Akismet to reduce spam. Learn how your comment data is processed.
-I TecMint :
-
-BEGINNER'S GUIDE FOR LINUX Start learning Linux in minutes
-Vi/Vim Editor BEGINNER'S GUIDE Learn vi/vim as a Full Text Editor
-Linux Foundation Certification Exam Study Guide to LFCS and LFCE
-
-    How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin
-
-    How to Install Nagios 4.3.4 on RHEL, CentOS and Fedora
-
-    Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-12
-
-    How to Install Google Chrome 75 On RHEL/CentOS 7 and Fedora 30
-
-    How to Install Ubuntu 16.10/16.04 Alongside With Windows 10 or 8 in Dual-Boot
-
-RedHat RHCSA and RHCE Certification Exam Study Ebook
-
-Linux System Administrator Bundle with 7-Courses (96% off)
-
-Add to Cart - $69
-
-Ending In: 3 days
-
-Computer Hacker Professional Certification Course (96% Off)
-
-Add to Cart - $59
-
-Ending In: 4 days
-Linux eBooks
-
-    Introducing Learn Linux In One Week and Go from Zero to Hero
-    RedHat RHCE/RHCSA Certification Preparation Guide
-    Linux Foundations LFCS/LFCE Certification Guide
-    Postfix Mail Server Setup Guide for Linux
-    Ansible Setup Guide for Linux
-    Django Setup Guide for Linux
-    Awk Getting Started Guide for Beginners
-    Citrix XenServer Setup Guide for Linux
-
-Never Miss Any Linux Tutorials, Guides, Tips and Free eBooks
-
-Join Our Community Of 150,000+ Linux Lovers and get a weekly newsletter in your inbox
-
-YES! SIGN ME UP
-
-
-
-Linux Monitoring Tools
-
-    Block SSH Server Attacks (Brute Force Attacks) Using DenyHosts
-
-    Install Munin (Network Monitoring) in RHEL, CentOS and Fedora
-
-    Netdata – A Real-Time Performance Monitoring Tool for Linux Systems
-
-    Configure Collectd as a Central Monitoring Server for Clients
-
-    ngxtop – Monitor Nginx Log Files in Real Time in Linux
-
-Linux Interview Questions
-
-    10 Core Linux Interview Questions and Answers
-
-    10 Useful Interview Questions on Linux Services and Daemons
-
-    10 Linux Interview Questions and Answers for Linux Beginners – Part 3
-
-    10 Useful Interview Questions and Answers on Linux Commands
-
-    10 Useful SSH (Secure Shell) Interview Questions and Answers
-
-Open Source Tools
-
-    6 Best Mail Transfer Agents (MTA’s) for Linux
-
-    24 Outstanding Backup Utilities for Linux Systems in 2018
-
-    10 Best Free and Open Source Software (FOSS) Programs I Found in 2016
-
-    6 Best Email Clients for Linux Systems
-
-    21 Free Open Source Applications I Found in Year 2018
-
-    Donate to TecMint
-    Contact Us
-    Advertise on TecMint
-    Linux Services
-    Copyright Policy
-    Privacy Policy
-    Career
-    Sponsored Post
-
-Tecmint: Linux Howtos, Tutorials & Guides © 2019. All Rights Reserved.
-
-The material in this site cannot be republished either online or offline, without our permission.
-
-    20 Command Line Tools to Monitor Linux Performance
 
